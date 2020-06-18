@@ -198,11 +198,11 @@ if __name__ == '__main__':
 
     df = pd.merge(df_oecd, mobility_features_df, left_on="Country", right_index=True, sort=True)
 
-    df["Relative social distancing start time"] = df["Social distancing start time"] - df["ten_deaths"]
+    df["Relative social distancing start time (tau)"] = df["Social distancing start time"] - df["ten_deaths"]
     df["Relative minimal mobility time point"] = df["Minimal mobility time point"] - df["ten_deaths"]
     df["Relative lockdown release day"] = df["Lockdown release day"] - df["ten_deaths"]
 
-    feature_names = list(feature_names) + ["Relative social distancing start time", "Relative minimal mobility time point", "Relative lockdown release day"]
+    feature_names = list(feature_names) + ["Relative social distancing start time (tau)", "Relative minimal mobility time point", "Relative lockdown release day"]
 
     df_features = compute_correlations(df, "L_d/pop__log", feature_names)
     df_woJapan = df[df["Country"] != 'Japan']
@@ -210,3 +210,7 @@ if __name__ == '__main__':
     final = pd.merge(df_features, df_features_woJapan, left_index=True, right_index=True, suffixes=("", " - without Japan"))
 
     final.to_csv("social distancing X death - regression analysis.csv")
+
+    # Regression analysis
+    b, m = np.polyfit(df_woJapan["Relative social distancing start time (tau)"], df_woJapan["L_d/pop__log"], 1)
+    print("y={:.2f}x+{:.2f}".format(m, b))
