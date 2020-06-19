@@ -37,7 +37,7 @@ MOBILITY_DATA_FILE = "data/applemobilitytrends-2020-05-10.csv"  # raw apple data
 POP_DATA_FILE = 'data/population_size.csv'
 DEATH_DATA_FILE = "data/time_series_covid_19_deaths.csv"  # raw death data
 OECD_DATA_FILE = 'data/OECD_countries.csv'
-day_dif = 9  # mobility data begins on Jan 13 and death data on Feb 22
+day_dif = 9  # mobility data begins on Jan 13 and death data on Jan 22
 thres_death = 10  # number of documented deaths to filter noise
 
 def preprocess_countries_in_death_df(df_death):
