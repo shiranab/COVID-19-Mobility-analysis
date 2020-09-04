@@ -11,6 +11,10 @@ The rapid spread of SARS-CoV-2 and its threat to health systems worldwide have l
 
 The attached code fits the proposed models to the mobility data (Apple) and the daily deaths data (John's Hopkins University), extracts the relevant features, and runs the correlation between each feature and the fit of the regression analysis (paper, figure 4).
 
+### How to run?
+Change the parameters (listed below) in file "correlate_features.py" and run it!
+
+
 ### Parameters:
 ONLY_OECD - if True, run the analysis only for OECD countries, otherwise for all countries for which data exist.
 ONLY_US - if True, run the analysis for US states for which data exist
