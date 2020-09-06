@@ -16,11 +16,11 @@ Change the parameters (listed below) in file "correlate_features.py" and run it!
 
 
 ### Parameters:
-ONLY_OECD - if True, run the analysis only for OECD countries, otherwise for all countries for which data exist.
-ONLY_US - if True, run the analysis for US states for which data exist
-NORMALIZE - if True, normalize the death/confirmed data to 1 million population, otherwise, only divide the expected number by the population size.
-DEATH - if True, use #COVID-19 deaths, otherwise use #COVID-19 confirmed cases.
-UNTIL_MAY - if True, fit the logistic death function to the deaths/confirmed daily reports until May 10, 2019. Otherwise, use the raw data until August 31, 2020.
+* ONLY_OECD - if True, run the analysis only for OECD countries, otherwise for all countries for which data exist.
+* ONLY_US - if True, run the analysis for US states for which data exist.
+* NORMALIZE - if True, normalize the death/confirmed data to 1 million population, otherwise, only divide the expected number by the population size.
+* DEATH - if True, use #COVID-19 deaths, otherwise use #COVID-19 confirmed cases.
+* UNTIL_MAY - if True, fit the logistic death function to the deaths/confirmed daily reports until May 10, 2019. Otherwise, use the raw data until August 31, 2020.
 
 
 ### Data update:
